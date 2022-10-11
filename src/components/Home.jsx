@@ -9,7 +9,8 @@ const Home = () => {
         <section>
             <div className="bg-gray-100">
                 <div className="container flex flex-col items-center pb-24 mx-auto text-center lg:pb-56 md:py-30 md:px-10 lg:px-25 text-gray-900">
-                    <h1 className='text-xl'>Wellcome to Learnign website to know something.</h1>
+                    <h1 className='text-3xl text-blue-800 md:px-10'>Wellcome to Learning website to know something.</h1>
+                    <p className='text-xl text-green-600 md:px-10'>Its very Helpfull to know CSE in different Way.</p>
                 </div>
             </div>
             <img

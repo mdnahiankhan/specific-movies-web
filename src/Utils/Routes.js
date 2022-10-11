@@ -2,10 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home";
+import Quez from "../components/Quez";
 
 import Root from "../components/Root";
 import Statistics from "../components/Statistics";
 import Topics from "../components/Topics";
+import { quezdata } from "../Loaders/Getquez";
 
 const router = createBrowserRouter([
     {
@@ -18,9 +20,11 @@ const router = createBrowserRouter([
             { path: '/statistics', element: <Statistics></Statistics> },
             { path: '/topics', element: <Topics></Topics> },
             { path: '/blog', element: <Blog></Blog> },
-            { path: '/home', element: <Home></Home> }
+            { path: '/home', element: <Home></Home> },
+            { path: '/quez', loader: quezdata, element: <Quez></Quez> }
         ]
 
-    }
+    },
+
 ])
 export default router;

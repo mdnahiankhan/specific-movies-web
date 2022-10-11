@@ -1,17 +1,21 @@
 
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Header from './Header';
 
 
 export const DataContext = createContext([])
+
+const Quezcontext = createContext([]);
 const Root = () => {
     const { data } = useLoaderData();
-    console.log(data);
+    const [quez, setquez] = useState([]);
     return (
         <DataContext.Provider value={data}>
-            <Header></Header>
-            <Outlet></Outlet>
+            <Quezcontext.Provider value={[quez, setquez]}>
+                <Header></Header>
+                <Outlet></Outlet>
+            </Quezcontext.Provider>
         </DataContext.Provider>
 
     );
