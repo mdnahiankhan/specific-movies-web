@@ -1,13 +1,19 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+
+import { createContext } from 'react';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import Header from './Header';
 
+
+export const DataContext = createContext([])
 const Root = () => {
+    const { data } = useLoaderData();
+    console.log(data);
     return (
-        <div>
+        <DataContext.Provider value={data}>
             <Header></Header>
             <Outlet></Outlet>
-        </div>
+        </DataContext.Provider>
+
     );
 };
 

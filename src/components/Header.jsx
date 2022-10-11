@@ -14,7 +14,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className="flex">
-                            <Link to='/body' rel="noopener noreferrer" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">   Topics
+                            <Link to='/topics' rel="noopener noreferrer" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Topics
                             </Link>
                         </li>
                         <li className="flex">
