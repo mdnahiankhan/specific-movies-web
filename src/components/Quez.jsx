@@ -4,7 +4,7 @@ import ShowQuez from './ShowQuez';
 
 const Quez = () => {
     const { data } = useLoaderData();
-    const { name, id, questions } = data;
+    const { name, questions } = data;
     return (
         <div>
             <h1 className='text-4xl text-blue-400'>Question For {name}</h1>
