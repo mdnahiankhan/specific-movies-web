@@ -4,4 +4,4 @@
 ## Aim for Help to grow up Yourself. So i Add some question and multiple question;
 # 2 : This website Has so many question which grow you to know  primary knowledge about programing.So I have to add some question and MCQ on Link Using React Router.This element is very helpfull its make your life easy.
 ## At last responsive the webpage;
-# 3 : Every webpage should be responsive because not only pc and laptop use this website , mobile user also use can this website. 
+# 3 : Every webpage should be responsive because not only pc and laptop user use this website ,so i response it and mobile user also use can this website. 

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { DataContext } from './Root';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Statistics = () => {
 
