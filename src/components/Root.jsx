@@ -6,16 +6,14 @@ import Header from './Header';
 
 export const DataContext = createContext([])
 
-const Quezcontext = createContext([]);
+
 const Root = () => {
     const { data } = useLoaderData();
-    const [quez, setquez] = useState([]);
+    console.log(data);
     return (
         <DataContext.Provider value={data}>
-            <Quezcontext.Provider value={[quez, setquez]}>
-                <Header></Header>
-                <Outlet></Outlet>
-            </Quezcontext.Provider>
+            <Header></Header>
+            <Outlet></Outlet>
         </DataContext.Provider>
 
     );
