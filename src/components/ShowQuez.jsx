@@ -5,26 +5,29 @@ import { DataContext } from './Root';
 
 const ShowQuez = ({ data, Answer }) => {
     const { question, options, id, correctAnswer } = data;
+    console.log(data);
     const datas = useContext(DataContext)
 
-    const [answer, setanswer] = useState();
+    const [answer, setanswer] = useState([]);
 
     const checkhandler = (answer) => {
         // console.log(answer, correctAnswer);
-        console.log(answer, Answer);
-        // const answers = datas.find(opt => opt.correctAnswer === datas.correctAnswer)
-        // if (answers) {
-        //     datas.correctAnswer = correctAnswer;
-        //     newans = [...datas, answer]
-        //     console.log('The answer is correct');
-        // }
-        // else {
-        //     const rest = datas.filter(opt => opt.correctAnswer !== datas.correctAnswer)
-        //     rest.correctAnswer = answers.correctAnswer;
-        //     newans = [...rest, answers]
-        //     console.log('The answer is wrong');
-        // }
-        // setanswer(newans);
+        let newans = []
+        console.log(answer, correctAnswer);
+        const answers = datas.find(opt => opt.correctAnswer === datas.correctAnswer);
+        if (answers) {
+            datas.correctAnswer = answers.correctAnswer;
+            newans = [...datas, answer]
+            toast.success('The Answer is Correct', { autoClose: 500 })
+        }
+        else {
+            const rest = datas.filter(opt => opt.correctAnswer !== datas.correctAnswer)
+            rest.correctAnswer = !correctAnswer;
+            newans = [...rest, answers]
+            console.log('The answer is wrong');
+            toast.error('The Answer is Wrong', { autoClose: 500 })
+        }
+        setanswer(newans);
     }
     return (
         <div className='bg-slate-300 mt-4 lg:mx-20 md:mx-16 sm:mx-8 lg:p-10 md:p-6 sm:p-3 p-2 rounded-md'>

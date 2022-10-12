@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Students from '../assets/Students.jpg'
+
 import { DataContext } from './Root';
 import Topics from './Topics';
 
@@ -19,6 +20,7 @@ const Home = () => {
                 className="w-3/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 bg-gray-500"
             />
             <Topics></Topics>
+
         </section>
     );
 };

@@ -1,6 +1,7 @@
 
 import { createContext, useState } from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
+import Footer from './Footer';
 import Header from './Header';
 
 
