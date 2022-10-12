@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import Option from './Option';
+import { DataContext } from './Root';
 
-const ShowQuez = ({ data }) => {
-    const { question, correctAnswer, options, id } = data;
-    console.log(data);
+const ShowQuez = ({ data, Answer }) => {
+    const { question, options, id, correctAnswer } = data;
+    const datas = useContext(DataContext)
 
-    const checkhandler = (options) => {
-        const Answer = options.find(existanswer => existanswer === existanswer.correctAnswer)
-        if (Answer) {
-            toast.success('The answer is correct', { autoClose: 500 })
-        }
-        else {
-            toast.error('the answer is wrong!', { autoClose: 500 })
-        }
+    const [answer, setanswer] = useState();
+
+    const checkhandler = (answer) => {
+        // console.log(answer, correctAnswer);
+        console.log(answer, Answer);
+        // const answers = datas.find(opt => opt.correctAnswer === datas.correctAnswer)
+        // if (answers) {
+        //     datas.correctAnswer = correctAnswer;
+        //     newans = [...datas, answer]
+        //     console.log('The answer is correct');
+        // }
+        // else {
+        //     const rest = datas.filter(opt => opt.correctAnswer !== datas.correctAnswer)
+        //     rest.correctAnswer = answers.correctAnswer;
+        //     newans = [...rest, answers]
+        //     console.log('The answer is wrong');
+        // }
+        // setanswer(newans);
     }
     return (
         <div className='bg-slate-300 mt-4 lg:mx-20 md:mx-16 sm:mx-8 lg:p-10 md:p-6 sm:p-3 p-2 rounded-md'>
@@ -23,7 +34,7 @@ const ShowQuez = ({ data }) => {
 
             <div className='grid md:grid-cols-2 grid-cols-1 gap-4 my-3'>
                 {
-                    options.map(option => <Option key={option.id} option={option} checkhandler={checkhandler}></Option>)
+                    options.map(option => <Option key={option.correctAnswer} option={option} checkhandler={() => checkhandler(Answer)}></Option>)
                 }
             </div>
         </div>

@@ -9,7 +9,7 @@ const Quez = () => {
         <div>
             <h1 className='text-4xl text-blue-100 shadow-lg px-4 bg-gray-600 w-1/2 mx-auto mb-6 mt-8'>Question For {name}</h1>
             {
-                questions.map(data => <ShowQuez key={data.id} data={data}></ShowQuez>)
+                questions.map(data => <ShowQuez key={data.id} data={data} Answer={data.correctAnswer}></ShowQuez>)
             }
         </div>
     );

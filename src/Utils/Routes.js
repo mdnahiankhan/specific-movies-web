@@ -7,7 +7,6 @@ import Quez from "../components/Quez";
 import Root from "../components/Root";
 import Statistics from "../components/Statistics";
 import Topics from "../components/Topics";
-import { quezdata } from "../Loaders/Getquez";
 
 const router = createBrowserRouter([
     {
