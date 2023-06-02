@@ -13,7 +13,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
-        loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
         children: [
             { path: '/', element: <Home></Home> },
             { path: '/statistics', element: <Statistics></Statistics> },
@@ -21,8 +20,8 @@ const router = createBrowserRouter([
             { path: '/blog', element: <Blog></Blog> },
             { path: '/home', element: <Home></Home> },
             {
-                path: '/quez/:id', loader: async ({ params }) => {
-                    return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`);
+                path: '/shows/:id', loader: async ({ params }) => {
+                    return fetch(`https://api.tvmaze.com/shows/${params.id}`);
                 }, element: <Quez></Quez>
             }
         ]

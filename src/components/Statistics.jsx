@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { DataContext } from './Root';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Statistics = () => {
 
     const data = useContext(DataContext);
-    console.log(data);
+
     return (
         <div>
             <h1 className='text-bold bg-slate-600 rounded-md px-6 py-6 text-white text-4xl w-100'>Show the Statistics</h1>
@@ -13,7 +13,7 @@ const Statistics = () => {
                 <LineChart
                     width={900}
                     height={500}
-                    data={data}
+                    data={data.score}
                     margin={{
                         top: 5,
                         right: 30,

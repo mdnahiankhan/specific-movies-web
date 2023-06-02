@@ -1,6 +1,6 @@
 
-import { createContext } from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { createContext, useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 
 import Header from './Header';
@@ -10,9 +10,19 @@ export const DataContext = createContext([])
 
 
 const Root = () => {
-    const { data } = useLoaderData();
+    const [shows, setShows] = useState([]);
+    useEffect(() => {
+        fetch('https://api.tvmaze.com/search/shows?q=all')
+            .then(response => response.json())
+            .then(data => {
+                setShows(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }, []);
     return (
-        <DataContext.Provider value={data}>
+        <DataContext.Provider value={shows}>
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
